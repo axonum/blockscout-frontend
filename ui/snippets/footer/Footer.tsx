@@ -1,5 +1,6 @@
 import type { GridProps } from '@chakra-ui/react';
-import { Box, Grid, Flex, Text, Link, VStack, Skeleton } from '@chakra-ui/react';
+// import { Box, Grid, Flex, Text, Link, VStack, Skeleton } from '@chakra-ui/react';
+import { Box, Grid, Flex, Text, Link, VStack } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 
@@ -9,10 +10,10 @@ import config from 'configs/app';
 import type { ResourceError } from 'lib/api/resources';
 import useApiQuery from 'lib/api/useApiQuery';
 import useFetch from 'lib/hooks/useFetch';
-import useIssueUrl from 'lib/hooks/useIssueUrl';
+// import useIssueUrl from 'lib/hooks/useIssueUrl';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
-import FooterLinkItem from './FooterLinkItem';
+// import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
 import getApiVersionUrl from './utils/getApiVersionUrl';
 
@@ -29,51 +30,52 @@ const Footer = () => {
     },
   });
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
-  const issueUrl = useIssueUrl(backendVersionData?.backend_version);
-  const BLOCKSCOUT_LINKS = [
-    {
-      icon: 'edit' as const,
-      iconSize: '16px',
-      text: 'Submit an issue',
-      url: issueUrl,
-    },
-    {
-      icon: 'social/canny' as const,
-      iconSize: '20px',
-      text: 'Feature request',
-      url: 'https://blockscout.canny.io/feature-requests',
-    },
-    {
-      icon: 'social/git' as const,
-      iconSize: '18px',
-      text: 'Contribute',
-      url: 'https://github.com/blockscout/blockscout',
-    },
-    {
-      icon: 'social/tweet' as const,
-      iconSize: '18px',
-      text: 'Twitter',
-      url: 'https://www.twitter.com/blockscoutcom',
-    },
-    {
-      icon: 'social/discord' as const,
-      iconSize: '24px',
-      text: 'Discord',
-      url: 'https://discord.gg/blockscout',
-    },
-    {
-      icon: 'discussions' as const,
-      iconSize: '20px',
-      text: 'Discussions',
-      url: 'https://github.com/orgs/blockscout/discussions',
-    },
-    {
-      icon: 'donate' as const,
-      iconSize: '20px',
-      text: 'Donate',
-      url: 'https://github.com/sponsors/blockscout',
-    },
-  ];
+  // const issueUrl = useIssueUrl(backendVersionData?.backend_version);
+
+  // const BLOCKSCOUT_LINKS = [
+  //   {
+  //     icon: 'edit' as const,
+  //     iconSize: '16px',
+  //     text: 'Submit an issue',
+  //     url: issueUrl,
+  //   },
+  //   {
+  //     icon: 'social/canny' as const,
+  //     iconSize: '20px',
+  //     text: 'Feature request',
+  //     url: 'https://blockscout.canny.io/feature-requests',
+  //   },
+  //   {
+  //     icon: 'social/git' as const,
+  //     iconSize: '18px',
+  //     text: 'Contribute',
+  //     url: 'https://github.com/blockscout/blockscout',
+  //   },
+  //   {
+  //     icon: 'social/tweet' as const,
+  //     iconSize: '18px',
+  //     text: 'Twitter',
+  //     url: 'https://www.twitter.com/blockscoutcom',
+  //   },
+  //   {
+  //     icon: 'social/discord' as const,
+  //     iconSize: '24px',
+  //     text: 'Discord',
+  //     url: 'https://discord.gg/blockscout',
+  //   },
+  //   {
+  //     icon: 'discussions' as const,
+  //     iconSize: '20px',
+  //     text: 'Discussions',
+  //     url: 'https://github.com/orgs/blockscout/discussions',
+  //   },
+  //   {
+  //     icon: 'donate' as const,
+  //     iconSize: '20px',
+  //     text: 'Donate',
+  //     url: 'https://github.com/sponsors/blockscout',
+  //   },
+  // ];
 
   const frontendLink = (() => {
     if (config.UI.footer.frontendVersion) {
@@ -166,7 +168,7 @@ const Footer = () => {
           justifyContent={{ lg: 'flex-end' }}
           mt={{ base: 8, lg: 0 }}
         >
-          {
+          { /* {
             ([
               { title: 'Blockscout', links: BLOCKSCOUT_LINKS },
               ...(linksData || []),
@@ -180,7 +182,7 @@ const Footer = () => {
                   </VStack>
                 </Box>
               ))
-          }
+          } */ }
         </Grid>
       </Grid>
     );
@@ -218,7 +220,7 @@ const Footer = () => {
         justifyContent={{ lg: 'flex-end' }}
         mt={{ base: 8, lg: 0 }}
       >
-        { BLOCKSCOUT_LINKS.map(link => <FooterLinkItem { ...link } key={ link.text }/>) }
+        { /* { BLOCKSCOUT_LINKS.map(link => <FooterLinkItem { ...link } key={ link.text }/>) } */ }
       </Grid>
     </Grid>
   );
