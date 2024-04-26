@@ -53,14 +53,13 @@ export default function useNavItems(): ReturnType {
       isActive: pathname === '/ops' || pathname === '/op/[hash]',
     } : null;
 
-    const verifiedContracts: NavItem | null = null;
-    // const verifiedContracts: NavItem | null =
-    //  {
-    //    text: 'Verified contracts',
-    //    nextRoute: { pathname: '/verified-contracts' as const },
-    //    icon: 'verified',
-    //    isActive: pathname === '/verified-contracts',
-    //  };
+    const verifiedContracts: NavItem | null =
+     {
+       text: 'Verified contracts',
+       nextRoute: { pathname: '/verified-contracts' as const },
+       icon: 'verified',
+       isActive: pathname === '/verified-contracts',
+     };
     const ensLookup = config.features.nameService.isEnabled ? {
       text: 'Name services lookup',
       nextRoute: { pathname: '/name-domains' as const },
@@ -236,11 +235,11 @@ export default function useNavItems(): ReturnType {
         text: 'Other',
         icon: 'gear',
         subItems: [
-          // {
-          //   text: 'Verify contract',
-          //   nextRoute: { pathname: '/contract-verification' as const },
-          //   isActive: pathname.startsWith('/contract-verification'),
-          // },
+          {
+            text: 'Verify contract',
+            nextRoute: { pathname: '/contract-verification' as const },
+            isActive: pathname.startsWith('/contract-verification'),
+          },
           config.features.gasTracker.isEnabled && {
             text: 'Gas tracker',
             nextRoute: { pathname: '/gas-tracker' as const },

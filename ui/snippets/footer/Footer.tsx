@@ -200,7 +200,7 @@ const Footer = () => {
     >
 
       { renderNetworkInfo({ lg: 'network' }) }
-      { renderProjectInfo({ lg: 'info' }) }
+      { /* { renderProjectInfo({ lg: 'info' }) } */ }
 
       <Grid
         gridArea={{ lg: 'links-bottom' }}

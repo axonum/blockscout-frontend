@@ -36,7 +36,7 @@ export default function useAddOrSwitchChain() {
             decimals: config.chain.currency.decimals,
           },
           rpcUrls: [ config.chain.rpcUrl ],
-          blockExplorerUrls: [ config.app.baseUrl ],
+          blockExplorerUrls: [ config.chain.explorerUrl ],
         } ] as never;
         // in wagmi types for wallet_addEthereumChain method is not provided
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
